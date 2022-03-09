@@ -90,13 +90,62 @@ app.post('/demoApi/book', (req, res) => {
         .then(author => res.json(author))
 })
 
+// get all books
+app.get('/demoApi/books', (req, res) => {
+    Book.findAll().then(books =>
+        res.json(books))
+})
+
+
+
+// get book by  bookId
+app.get('/demoApi/book/:id', (req, res) => {
+    Book.findOne(
+        {
+            where: { id: req.params.id, },
+        }
+    ).then(book => res.json(book))
+})
+
+
+
+//delete of book
+
+app.delete("/demoApi/:id",(req,res)=>
+{
+    let query;
+    query=Book.destroy(
+        {
+            where: { id: req.params.id, },
+            include: [{ model: Book }
+            ] 
+            
+        }
+)
+return query.then(()=>res.json("deleted sucessfully"))
+});
 
 
 
 
+  //book update gareko hai vai
 
-
-
+  
+  app.put("/update/book", (req, res) => {
+    
+    let query;
+    query=Book.update(
+      {
+        bookName: req.body.bookName
+      },
+      {
+        where: { id: req.body.id }
+      }
+    )
+    
+    return query.then(()=>res.json("updated sucessfully"))
+    
+  });
 
 
 
