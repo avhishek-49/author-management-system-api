@@ -1,3 +1,5 @@
+//book ko schema setup
+
 module.exports = (sequelize, type) => {
     return sequelize.define('book', {
         id: {
