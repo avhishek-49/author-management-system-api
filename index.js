@@ -30,22 +30,7 @@ app.get('/demoApi/author/:id', (req, res) => {
     ).then(author => res.json(author))
 })
 
-// // get author with his book list
-// app.get('/demoApi/authorHasManyBooks/:id', (req, res) => {
-//     let query;
 
-//     query = Author.findAll({
-//         where: { id: req.params.id, },
-//         include: [{ model: Book }
-//         ]
-//     })
-
-//     return query.then(author => res.json(author))
-// })
-
-
-
-//delete of author
 
 app.delete("/demoApi/authorHasManyBooks/:id",(req,res)=>
 {
@@ -66,40 +51,10 @@ return query.then(()=>res.json("deleted sucessfully"))
 
 
 
-//delete of book
-
-
-
-//update of Authorr hai babu
-
-
-
-
-// app.put("/update/Author/:id",(req,res)=>
-// {
-//     let query;
-//     query=Author.update(
-
-//         {
-//             Author:req.body.Author
-//         },
-
-
-//         {
-//             where: { id: req.params.id },
-//             include: [{ model: Book }
-//             ] 
-            
-//         }
-// )
-            
+   
            
         
 
-// return query.then(()=>res.json("updated sucessfully"))
-// });
-
-// author update gareko hai vaii 
 
 
 app.put("/update/author", (req, res) => {
@@ -122,7 +77,7 @@ app.put("/update/author", (req, res) => {
   });
 
 
-  //book update gareko hai vai
+
 
   
 
