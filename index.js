@@ -6,7 +6,7 @@ const { Author, Book } = require('./sequelize')
 const app = express()
 app.use(bodyParser.json())
 
-// Create a Author
+// author create gareko
 app.post('/demoApi/author', (req, res) => {
     console.log(req.body)
     Author.create(req.body)
@@ -21,7 +21,7 @@ app.get('/demoApi/authors', (req, res) => {
 })
 
 
-// get author by id
+// get author by id // extra gareko
 app.get('/demoApi/author/:id', (req, res) => {
     Author.findOne(
         {
@@ -30,7 +30,7 @@ app.get('/demoApi/author/:id', (req, res) => {
     ).then(author => res.json(author))
 })
 
-
+//author delete gareko
 
 app.delete("/demoApi/authorHasManyBooks/:id",(req,res)=>
 {
@@ -54,7 +54,7 @@ return query.then(()=>res.json("deleted sucessfully"))
    
            
         
-
+//author update gareko
 
 
 app.put("/update/author", (req, res) => {
