@@ -1,4 +1,4 @@
-const DATABASE_NAME='steven-smith';
+const DATABASE_NAME='author-book';
 const USERNAME='root';
 const PASSWORD='1234';
 const HOST='127.0.0.1';
