@@ -128,7 +128,12 @@ app.put("/update/author", (req, res) => {
 
 
   
-
+// create a book
+app.post('/demoApi/book', (req, res) => {
+    console.log("book==>", req.body)
+    Book.create(req.body)
+        .then(author => res.json(author))
+})
 
 
 
